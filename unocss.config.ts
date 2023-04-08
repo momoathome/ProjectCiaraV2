@@ -19,7 +19,7 @@ export default defineConfig({
     ],
     [
       "icon-btn",
-      "hover:text-violet-500 dark:hover:text-sky-500 inline-block select-none border-none opacity-75 transition duration-200 ease-in-out hover:opacity-100",
+      "hover:text-primary inline-block select-none border-none opacity-75 transition duration-200 ease-in-out hover:opacity-100",
     ],
     ["list", "list-disc list-inside"],
     ["flex-center", "flex items-center justify-center"],
@@ -63,6 +63,8 @@ export default defineConfig({
     colors: {
       base: 'rgb(var(--base))',
       base_light: 'rgb(var(--base-light))',
+      primary: 'rgb(var(--primary))',
+      secondary: 'rgb(var(--secondary))',
     },
   },
 });

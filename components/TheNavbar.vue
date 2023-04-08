@@ -74,10 +74,7 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-a {
-  text-decoration: none;
-  color: rgb(var(--test));
-}
+
 .nav-logo-wrapper {
   display: flex;
   flex: 1;
@@ -98,7 +95,7 @@ a {
   height: 100%;
 }
 
-.nav-links > a {
+.nav-links a {
   padding-inline: 1rem;
   height: 100%;
   display: flex;
@@ -107,12 +104,8 @@ a {
   transition: 200ms ease-in;
 }
 
-.nav-links > a:hover {
-  background-color: var(--gray);
-}
-
-.dark .nav-links > a:hover {
-  color: rgb(var(--base));
+.nav-links a:hover {
+  color: rgb(var(--primary));
 }
 
 .nav-check {
@@ -136,7 +129,7 @@ a {
     gap: 1rem;
     width: 100%;
     height: 0px;
-    background-color: var(--gray);
+    background-color: rgb(var(--secondary));
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 0;

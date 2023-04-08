@@ -1,23 +1,43 @@
+:root {
+  --base: 34, 40, 49;
+  --base-light: 238, 238, 238; 
+  --primary: 0, 173, 181;
+  --secondary: 57, 62, 70;
+}
+
+.dark {
+  background-color: rgb(var(--base));
+  color: rgb(var(--base-light));
+}
+
+
+
+
 button, [role="button"] {
   cursor: pointer;
+  padding: 0;
+  border-width: 0;
 }
 select, [role="listbox"] {
   cursor: pointer;
+}
+ul, [role="none"] {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: rgb(var(--base));
+}
+.dark a {
+  color: rgb(var(--base-light));
+}
+.router-link-active {
+  color: rgb(var(--primary)) !important;
 }
 :disabled {
   cursor: default;
 }
 [hidden] {
   display: none;
-}
-
-:root {
-  --base: 18, 18, 18;
-  --base-light: 244, 244, 245; 
-  --gray: rgb(226, 232, 240);
-}
-
-.dark {
-  background-color: rgb(var(--base));
-  color: rgb(var(--base-light));
 }
