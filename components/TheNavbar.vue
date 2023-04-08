@@ -19,17 +19,20 @@ const { locale: currentLocale, t } = useI18n();
     </label>
 
     <nav class="nav-links">
-      <nuxt-link to="/about">
+      <nuxt-link to="/hangar">
         {{ t("navigation.hangar") }}
       </nuxt-link>
-      <nuxt-link to="/about">
+      <nuxt-link to="/modules">
         {{ t("navigation.module") }}
       </nuxt-link>
-      <nuxt-link to="/about">
+      <nuxt-link to="/market">
         {{ t("navigation.market") }}
       </nuxt-link>
-      <nuxt-link to="/about">
+      <nuxt-link to="/asteroids">
         {{ t("navigation.asteroid") }}
+      </nuxt-link>
+      <nuxt-link to="/research">
+        {{ t("navigation.research") }}
       </nuxt-link>
     </nav>
 
@@ -40,7 +43,7 @@ const { locale: currentLocale, t } = useI18n();
         tabindex="0"
         id="languageListBox"
         aria-labelledby="languageListBox"
-        class="rounded-lg list py-1 px-2 dark:bg-base"
+        class="rounded-lg list py-1 px-2 transition dark:bg-base"
       >
         <option
           v-for="locale of availableLocales"
@@ -96,7 +99,7 @@ a {
 }
 
 .nav-links > a {
-  padding-inline: 0.75rem;
+  padding-inline: 1rem;
   height: 100%;
   display: flex;
   align-items: center;

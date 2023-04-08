@@ -1,7 +1,7 @@
 {
-  "name": "nuxt3-snowowl-starter-template",
-  "version": "1.0.0",
-  "description": "my Nuxt 3 starter template with Nuxt3 + unocss",
+  "name": "project-ciara",
+  "version": "0.0.1",
+  "description": "the space game in your Browser",
   "private": true,
   "author": "Snowowl",
   "license": "MIT",

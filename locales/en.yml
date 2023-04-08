@@ -5,6 +5,7 @@ navigation:
   module: Modules
   market: Market
   asteroid: Asteroids
+  research: Research
 stats:
   credits: Credits
   units: Unitlimit
