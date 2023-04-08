@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 const { t } = useI18n();
 
-/* definePageMeta({
+definePageMeta({
   layout: "centercard",
 });
- */
+
 useHead({
   title: `${t("navigation.hangar")} - ${t("global.title")} `,
 });
