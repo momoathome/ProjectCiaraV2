@@ -1,0 +1,15 @@
+global:
+  about: About
+main:
+  title: Welcome,
+about:
+  title: About Snowowl starter Template
+  summary: >-
+    Snowowl starter Template is a simple, fast, and ready to use starter template for Nuxt 3.
+    It features the necessary tools to get you started immediately on your next project.
+  config: >-
+    On top of that, it contains little helpers to help with localization,
+    color schemes, and even a configuration for ESLint and VSCode.
+theme:
+  dark: Dark
+  light: Light

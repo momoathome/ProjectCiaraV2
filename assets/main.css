@@ -1,0 +1,23 @@
+button, [role="button"] {
+  cursor: pointer;
+}
+select, [role="listbox"] {
+  cursor: pointer;
+}
+:disabled {
+  cursor: default;
+}
+[hidden] {
+  display: none;
+}
+
+:root {
+  --base: 18, 18, 18;
+  --base-light: 244, 244, 245; 
+  --gray: rgb(226, 232, 240);
+}
+
+.dark {
+  background-color: rgb(var(--base));
+  color: rgb(var(--base-light));
+}
