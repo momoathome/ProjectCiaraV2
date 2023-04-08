@@ -6,7 +6,7 @@ const { locale: currentLocale, t } = useI18n();
 <template>
   <header>
     <div class="nav-logo-wrapper">
-      <nuxt-link to="/" class="nav-logo">Snowowl</nuxt-link>
+      <nuxt-link to="/" class="nav-logo"> {{ t("global.title") }} </nuxt-link>
     </div>
 
     <input type="checkbox" class="nav-check" id="nav-check" />
@@ -20,11 +20,17 @@ const { locale: currentLocale, t } = useI18n();
 
     <nav class="nav-links">
       <nuxt-link to="/about">
-        {{ t("global.about") }}
+        {{ t("navigation.hangar") }}
       </nuxt-link>
-      <a href="#" target="_blank">Stackoverflow</a>
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="https://codepen.io/momoathome/pen/JjMOxEP" target="_blank">Codepen</a>
+      <nuxt-link to="/about">
+        {{ t("navigation.module") }}
+      </nuxt-link>
+      <nuxt-link to="/about">
+        {{ t("navigation.market") }}
+      </nuxt-link>
+      <nuxt-link to="/about">
+        {{ t("navigation.asteroid") }}
+      </nuxt-link>
     </nav>
 
     <div class="flex flex-row gap-2">
