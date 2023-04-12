@@ -40,8 +40,8 @@ export default defineConfig({
     presetWebFonts({
       provider: "bunny",
       fonts: {
-        display: "Red Hat Display",
-        text: "Red Hat Text",
+        display: "Inter",
+        text: "Inter",
         mono: "JetBrains Mono",
       },
     }),

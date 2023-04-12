@@ -1,11 +1,12 @@
 global:
   title: Project Ciara
 navigation:
-  hangar: Hangar
-  module: Modules
+  overview: Overview
+  shipyard: Shipyard
+  research: Laboratory
   market: Market
+  supply: Supply
   asteroid: Asteroids
-  research: Research
 stats:
   credits: Credits
   units: Unitlimit

@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   // global CSS files
   css: [
-    '~/assets/normalize.css', '~/assets/main.css',
+    '~/assets/css/normalize.css', '~/assets/css/main.css',
   ],
 
   // plugin configurations
