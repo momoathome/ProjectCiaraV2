@@ -1,79 +1,62 @@
 <script setup lang="ts">
-const { locale: currentLocale, t } = useI18n();
+const { locale: currentLocale, t } = useI18n()
 </script>
 
 <template>
   <header class="top-0 z-50 fixed">
     <div class="nav-logo-wrapper">
-      <nuxt-link to="/" class="nav-logo"> {{ t("global.title") }} </nuxt-link>
+      <nuxt-link to="/" class="nav-logo">
+        {{ t("global.title") }}
+      </nuxt-link>
     </div>
 
-    <input type="checkbox" class="nav-check" id="nav-check" />
-    <label for="nav-check" id="label-nav-check">
+    <input id="nav-check" type="checkbox" class="nav-check">
+    <label id="label-nav-check" for="nav-check">
       <div class="hamb">
-        <span class="hamb-line line1"></span>
-        <span class="hamb-line line2"></span>
-        <span class="hamb-line line3"></span>
+        <span class="hamb-line line1" />
+        <span class="hamb-line line2" />
+        <span class="hamb-line line3" />
       </div>
     </label>
 
     <ul class="flex gap-8">
       <li class="flex gap-2">
-        <img src="~/assets/images/digital-money.svg" width="32px" alt="" />
-        <span class="flex font-bold items-center" id="playerCreditValue">120.000.000</span>
+        <img src="~/assets/images/digital-money.svg" width="32px" alt="">
+        <span id="playerCreditValue" class="flex font-bold items-center">120.000.000</span>
       </li>
       <li class="flex gap-2">
-        <img src="~/assets/images/MdiLightningBolt.svg" width="32px" alt="" />
-        <span class="flex font-bold items-center" id="playerEnergyValue">1.020</span>
+        <img src="~/assets/images/MdiLightningBolt.svg" width="32px" alt="">
+        <span id="playerEnergyValue" class="flex font-bold items-center">1.020</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-bold border-dark-900 text-sm w-8 res-titanium justify-center items-center">Ti</div> -->
-        <img src="~/assets/images/steel.png" width="32px" alt="" />
-        <span class="flex font-bold items-center" id="playerTitaniumValue">2.500</span>
+        <img src="~/assets/images/steel.png" width="32px" alt="">
+        <span id="playerTitaniumValue" class="flex font-bold items-center">2.500</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-medium border-dark-900 text-white text-sm w-8 res-carbon justify-center items-center">C</div> -->
-        <img src="~/assets/images/carbon-nanotube.png" width="32px" alt="" />
-        <span class="flex font-bold items-center" id="playerCarbonValue">4.000</span>
+        <img src="~/assets/images/carbon-nanotube.png" width="32px" alt="">
+        <span id="playerCarbonValue" class="flex font-bold items-center">4.000</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-medium border-dark-900 text-white text-sm w-8 res-helium justify-center items-center">H</div> -->
-        <img src="~/assets/images/helium.png" width="32px" alt="" />
-        <span class="flex font-bold items-center" id="playerHeliumValue">2.000</span>
+        <img src="~/assets/images/helium.png" width="32px" alt="">
+        <span id="playerHeliumValue" class="flex font-bold items-center">2.000</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-bold border-dark-900 text-sm w-8 res-kyber justify-center items-center">Ky</div> -->
-        <img src="~/assets/images/mineral.png" width="32px" alt="" />
-        <span class="flex font-bold items-center" id="playerKristalValue">900</span>
+        <img src="~/assets/images/mineral.png" width="32px" alt="">
+        <span id="playerKristalValue" class="flex font-bold items-center">900</span>
       </li>
       <li class="flex gap-2">
-        <img src="~/assets/images/laserSparks.svg" width="28px" alt="" />
-        <span class="flex font-bold items-center" id="playerCombatValue">45.000</span>
+        <img src="~/assets/images/laserSparks.svg" width="28px" alt="">
+        <span id="playerCombatValue" class="flex font-bold items-center">45.000</span>
       </li>
       <li class="flex gap-2">
-        <img src="~/assets/images/spaceship.svg" width="28px" alt="" />
-      <span class="flex font-bold items-center" id="playerUnitLimitValue">322</span>
-    </li>
-  </ul>
-
-  <!--     <nav class="nav-links">
-      <nuxt-link to="/hangar">
-        {{ t("navigation.hangar") }}
-      </nuxt-link>
-      <nuxt-link to="/modules">
-        {{ t("navigation.module") }}
-      </nuxt-link>
-      <nuxt-link to="/market">
-        {{ t("navigation.market") }}
-      </nuxt-link>
-      <nuxt-link to="/asteroids">
-        {{ t("navigation.asteroid") }}
-        </nuxt-link>
-        <nuxt-link to="/research">
-          {{ t("navigation.research") }}
-        </nuxt-link>
-      </nav> -->
-
+        <img src="~/assets/images/spaceship.svg" width="28px" alt="">
+        <span id="playerUnitLimitValue" class="flex font-bold items-center">322</span>
+      </li>
+    </ul>
   </header>
 </template>
 
@@ -106,25 +89,6 @@ header {
   height: 100%;
   font-weight: 700;
   align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  font-size: 18px;
-  height: 100%;
-}
-
-.nav-links a {
-  padding-inline: 1rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  transition: 200ms ease-in;
-}
-
-.nav-links a:hover {
-  color: rgb(var(--primary));
 }
 
 .nav-check {

@@ -14,8 +14,12 @@
   background-color: rgb(var(--base));
   color: rgb(var(--base-light));
 }
-
-
+.dark a {
+  color: rgb(var(--base-light));
+}
+.router-link-active {
+  color: rgb(var(--primary)) !important;
+}
 
 
 button, [role="button"] {
@@ -33,12 +37,6 @@ ul, [role="none"] {
 a {
   text-decoration: none;
   color: rgb(var(--base));
-}
-.dark a {
-  color: rgb(var(--base-light));
-}
-.router-link-active {
-  color: rgb(var(--primary)) !important;
 }
 :disabled {
   cursor: default;

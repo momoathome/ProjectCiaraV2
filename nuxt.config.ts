@@ -57,7 +57,7 @@ export default defineNuxtConfig({
     ],
   },
   macros: {
-/*     exportProps: true,
+    /*     exportProps: true,
     reactivityTransform: true, */
   },
   colorMode: {

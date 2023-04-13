@@ -1,8 +1,8 @@
 {
   "name": "project-ciara",
   "version": "0.0.1",
-  "description": "the space game in your Browser",
   "private": true,
+  "description": "the space game in your Browser",
   "author": "Snowowl",
   "license": "MIT",
   "repository": {
@@ -10,12 +10,13 @@
     "url": ""
   },
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "nuxt dev -o",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "nuxi": "nuxi",
     "taze": "taze major -I"
   },
