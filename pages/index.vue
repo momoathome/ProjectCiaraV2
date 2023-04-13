@@ -3,8 +3,6 @@
 </script>
 
 <template>
-  <TheSideMenu />
-
   <div class="p-4 md:ml-64">
     <div class="border-dashed rounded-lg border-2 border-gray-200 mt-14 p-4 dark:border-gray-700">
       <div class="mb-4 grid gap-4 grid-cols-3">

@@ -11,7 +11,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="mt-24">
     <h1 class="text-center">
       {{ t("global.title") }}
     </h1>

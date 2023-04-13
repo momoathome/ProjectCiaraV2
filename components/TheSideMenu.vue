@@ -11,59 +11,38 @@ const { locale: currentLocale, t } = useI18n()
   >
     <div class="h-full py-4 px-3 overflow-y-auto">
       <nav class="font-medium">
-        <nuxt-link
-          to="/overview"
-          class="nav-link"
-        >
+        <nuxt-link to="/overview" class="nav-link">
           <img src="~/assets/images/space-station.png" width="32" alt="">
           <span class="ml-3">{{ t("navigation.overview") }}</span>
         </nuxt-link>
 
-        <nuxt-link
-          to="/shipyard"
-          class="nav-link"
-        >
+        <nuxt-link to="/shipyard" class="nav-link">
           <img src="~/assets/images/space-ship.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.shipyard") }}</span>
         </nuxt-link>
 
-        <nuxt-link
-          to="/research"
-          class="nav-link"
-        >
+        <nuxt-link to="/research" class="nav-link">
           <img src="~/assets/images/research.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.research") }}</span>
           <span class="rounded-full font-medium bg-blue-100 h-3 text-sm ml-3 p-3 text-blue-800 w-3 inline-flex items-center justify-center dark:bg-blue-900 dark:text-blue-300">3</span>
         </nuxt-link>
 
-        <nuxt-link
-          to="/market"
-          class="nav-link"
-        >
+        <nuxt-link to="/market" class="nav-link">
           <img src="~/assets/images/trading.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.market") }}</span>
         </nuxt-link>
 
-        <nuxt-link
-          to="/supply"
-          class="nav-link"
-        >
+        <nuxt-link to="/supply" class="nav-link">
           <img src="~/assets/images/supply-chain.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.supply") }}</span>
         </nuxt-link>
 
-        <nuxt-link
-          to="/asteroids"
-          class="nav-link"
-        >
+        <nuxt-link to="/asteroids" class="nav-link">
           <img src="~/assets/images/asteroids.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.asteroid") }}</span>
         </nuxt-link>
 
-        <nuxt-link
-          to="/"
-          class="nav-link"
-        >
+        <nuxt-link to="/" class="nav-link">
           <svg
             aria-hidden="true"
             class="flex-shrink-0 h-6 transition text-gray-500 w-6 duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"

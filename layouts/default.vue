@@ -5,6 +5,7 @@
 <template>
   <div>
     <TheNavbar />
+    <TheSideMenu />
     <slot />
   </div>
 </template>
