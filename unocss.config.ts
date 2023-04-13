@@ -21,6 +21,7 @@ export default defineConfig({
       'icon-btn',
       'hover:text-primary inline-block select-none border-none opacity-75 transition duration-200 ease-in-out hover:opacity-100',
     ],
+    ['nav-link', 'rounded-lg flex px-2 py-3 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'],
     ['list', 'list-disc list-inside'],
     ['flex-center', 'flex items-center justify-center'],
     ['grid-center', 'grid place-items-center'],

@@ -6,14 +6,14 @@ const { locale: currentLocale, t } = useI18n()
 <template>
   <aside
     id="logo-sidebar"
-    class="bg-white border-r h-screen border-gray-200 pt-70px -translate-x-full transition-transform top-0 left-0 w-64 z-40 fixed md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+    class="border-r h-screen border-gray-200 pt-70px -translate-x-full transition-transform top-0 left-0 w-64 z-40 fixed md:translate-x-0 dark:border-gray-700"
     aria-label="Sidebar"
   >
-    <div class="bg-white h-full py-4 px-3 overflow-y-auto dark:bg-gray-800">
-      <nav class="font-medium space-y-2">
+    <div class="h-full py-4 px-3 overflow-y-auto">
+      <nav class="font-medium">
         <nuxt-link
           to="/overview"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <img src="~/assets/images/space-station.png" width="32" alt="">
           <span class="ml-3">{{ t("navigation.overview") }}</span>
@@ -21,7 +21,7 @@ const { locale: currentLocale, t } = useI18n()
 
         <nuxt-link
           to="/shipyard"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <img src="~/assets/images/space-ship.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.shipyard") }}</span>
@@ -29,18 +29,16 @@ const { locale: currentLocale, t } = useI18n()
 
         <nuxt-link
           to="/research"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <img src="~/assets/images/research.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.research") }}</span>
-          <span
-            class="rounded-full font-medium bg-blue-100 h-3 text-sm ml-3 p-3 text-blue-800 w-3 inline-flex items-center justify-center dark:bg-blue-900 dark:text-blue-300"
-          >3</span>
+          <span class="rounded-full font-medium bg-blue-100 h-3 text-sm ml-3 p-3 text-blue-800 w-3 inline-flex items-center justify-center dark:bg-blue-900 dark:text-blue-300">3</span>
         </nuxt-link>
 
         <nuxt-link
           to="/market"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <img src="~/assets/images/trading.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.market") }}</span>
@@ -48,7 +46,7 @@ const { locale: currentLocale, t } = useI18n()
 
         <nuxt-link
           to="/supply"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <img src="~/assets/images/supply-chain.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.supply") }}</span>
@@ -56,7 +54,7 @@ const { locale: currentLocale, t } = useI18n()
 
         <nuxt-link
           to="/asteroids"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <img src="~/assets/images/asteroids.png" width="32" alt="">
           <span class="flex-1 ml-3 whitespace-nowrap">{{ t("navigation.asteroid") }}</span>
@@ -64,7 +62,7 @@ const { locale: currentLocale, t } = useI18n()
 
         <nuxt-link
           to="/"
-          class="rounded-lg flex p-2 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="nav-link"
         >
           <svg
             aria-hidden="true"
