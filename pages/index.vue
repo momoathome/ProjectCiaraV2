@@ -1,80 +1,21 @@
 <script lang="ts" setup>
-
+const merlin = {
+  image: '/ships/scorpius.jpg',
+  title: 'Merlin',
+  description: 'Ein schneller, wendiger, leichter Jäger. Entwickelt für rasche Angriffe.',
+  unitLimit: 1,
+  combat: 100,
+  cost: 100_000,
+  cargo: 10,
+  buildTime: 5,
+}
 </script>
 
 <template>
   <div class="p-4 md:ml-64">
     <div class="border-dashed rounded-lg border-2 border-gray-200 mt-14 p-4 dark:border-gray-700">
-      <div class="mb-4 grid gap-4 grid-cols-3">
-        <div class="border border-dashed rounded flex border-gray-500 h-24 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-24 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-24 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-      </div>
-      <div class="border border-dashed rounded flex border-gray-500 h-48 mb-4 items-center justify-center">
-        <p class=" border-gray-500 text-2xl text-gray-400 ">
-          +
-        </p>
-      </div>
-      <div class="mb-4 grid gap-4 grid-cols-2">
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-      </div>
-      <div class="border border-dashed rounded flex border-gray-500 h-48 mb-4 items-center justify-center">
-        <p class=" border-gray-500 text-2xl text-gray-400 ">
-          +
-        </p>
-      </div>
-      <div class="grid gap-4 grid-cols-2">
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
-        <div class="border border-dashed rounded flex border-gray-500 h-28 items-center justify-center">
-          <p class=" border-gray-500 text-2xl text-gray-400 ">
-            +
-          </p>
-        </div>
+      <div class="h-600px grid gap-4">
+        <ContentCard :image="merlin.image" :title="merlin.title" :description="merlin.description" :cost="merlin.cost" :build-time="merlin.buildTime" :level="merlin.unitLimit" :combat="merlin.combat" :cargo="merlin.cargo" />
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <TheNavbar />
+    <TheRessourcBar />
     <TheSideMenu />
     <slot />
   </div>

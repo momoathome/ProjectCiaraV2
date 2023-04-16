@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale: currentLocale, t } = useI18n()
+const { t } = useI18n()
 </script>
 
 <template>
@@ -21,39 +21,39 @@ const { locale: currentLocale, t } = useI18n()
 
     <ul class="flex gap-8">
       <li class="flex gap-2">
-        <img src="~/assets/images/digital-money.svg" width="32px" alt="">
+        <img src="~/assets/images/playerRes/credits.svg" width="32px" alt="">
         <span id="playerCreditValue" class="flex font-bold items-center">120.000.000</span>
       </li>
       <li class="flex gap-2">
-        <img src="~/assets/images/MdiLightningBolt.svg" width="32px" alt="">
+        <img src="~/assets/images/playerRes/energy.svg" width="32px" alt="">
         <span id="playerEnergyValue" class="flex font-bold items-center">1.020</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-bold border-dark-900 text-sm w-8 res-titanium justify-center items-center">Ti</div> -->
-        <img src="~/assets/images/steel.png" width="32px" alt="">
+        <img src="~/assets/images/playerRes/titanium.png" width="32px" alt="">
         <span id="playerTitaniumValue" class="flex font-bold items-center">2.500</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-medium border-dark-900 text-white text-sm w-8 res-carbon justify-center items-center">C</div> -->
-        <img src="~/assets/images/carbon-nanotube.png" width="32px" alt="">
+        <img src="~/assets/images/playerRes/carbon.png" width="32px" alt="">
         <span id="playerCarbonValue" class="flex font-bold items-center">4.000</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-medium border-dark-900 text-white text-sm w-8 res-helium justify-center items-center">H</div> -->
-        <img src="~/assets/images/helium.png" width="32px" alt="">
+        <img src="~/assets/images/playerRes/helium.png" width="32px" alt="">
         <span id="playerHeliumValue" class="flex font-bold items-center">2.000</span>
       </li>
       <li class="flex gap-2">
         <!-- <div class="border border-solid flex font-bold border-dark-900 text-sm w-8 res-kyber justify-center items-center">Ky</div> -->
-        <img src="~/assets/images/mineral.png" width="32px" alt="">
+        <img src="~/assets/images/playerRes/kristal.png" width="32px" alt="">
         <span id="playerKristalValue" class="flex font-bold items-center">900</span>
       </li>
       <li class="flex gap-2">
-        <img src="~/assets/images/laserSparks.svg" width="28px" alt="">
+        <img src="~/assets/images/playerRes/combatValue.svg" width="28px" alt="">
         <span id="playerCombatValue" class="flex font-bold items-center">45.000</span>
       </li>
       <li class="flex gap-2">
-        <img src="~/assets/images/spaceship.svg" width="28px" alt="">
+        <img src="~/assets/images/playerRes/spaceship.svg" width="28px" alt="">
         <span id="playerUnitLimitValue" class="flex font-bold items-center">322</span>
       </li>
     </ul>

@@ -15,7 +15,7 @@ export default defineConfig({
   shortcuts: [
     [
       'btn',
-      'px-4 py-2 font-medium text-sm tracking-wide text-white capitalize transition-colors transform bg-sky-400 rounded-md border-none no-underline hover:bg-sky-500 focus:( outline-none ring ring-teal-300 ring-opacity-80 )',
+      'px-22 py-2 font-medium text-xl tracking-wide text-white transition-colors transform rounded-lg border-none no-underline bg-gradient-to-r from-#98DBF9 via-#436DAB to-#101318 focus:( outline-none ring ring-teal-300 ring-opacity-80 )',
     ],
     [
       'icon-btn',

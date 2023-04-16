@@ -3,11 +3,6 @@
   --base-light: 238, 238, 238; 
   --primary: 0, 173, 181;
   --secondary: 57, 62, 70;
-
-  /* content-card background-gradient
-    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
-    background-blend-mode: multiply;
-  */
 }
 
 .dark {
@@ -37,6 +32,9 @@ ul, [role="none"] {
 a {
   text-decoration: none;
   color: rgb(var(--base));
+}
+p {
+  margin: 0;
 }
 :disabled {
   cursor: default;
