@@ -15,13 +15,13 @@ export default defineConfig({
   shortcuts: [
     [
       'btn',
-      'px-22 py-2 font-medium text-xl tracking-wide text-white transition-colors transform rounded-lg border-none no-underline bg-gradient-to-r from-#98DBF9 via-#436DAB to-#101318 focus:( outline-none ring ring-teal-300 ring-opacity-80 )',
+      'px-22 py-2 font-medium text-xl tracking-wide text-white transition transform rounded-xl border-none no-underline shadow-md bg-gradient-to-r from-#98DBF9 via-#436DAB to-#101318',
     ],
     [
       'icon-btn',
       'hover:text-primary inline-block select-none border-none opacity-75 transition duration-200 ease-in-out hover:opacity-100',
     ],
-    ['nav-link', 'rounded-lg flex px-2 py-3 text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'],
+    ['nav-link', 'flex px-6 py-3 transition text-gray-900 items-center dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'],
     ['list', 'list-disc list-inside'],
     ['flex-center', 'flex items-center justify-center'],
     ['grid-center', 'grid place-items-center'],
@@ -39,7 +39,7 @@ export default defineConfig({
     }),
     presetTypography(),
     presetWebFonts({
-      provider: 'bunny',
+      provider: 'google',
       fonts: {
         display: 'Inter',
         text: 'Inter',

@@ -3,9 +3,9 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <header class="top-0 z-50 fixed">
-    <div class="nav-logo-wrapper">
-      <nuxt-link to="/" class="nav-logo">
+  <header class="bg-white border-b-solid flex border-b-base/20 border-b-1 h-55px w-full px-8 top-0 z-50 gap-16 fixed justify-between items-center dark:bg-base dark:border-b-base_light/10 ">
+    <div class="flex h-full flex-1">
+      <nuxt-link to="/" class="flex font-bold h-full text-22px items-center">
         {{ t("global.title") }}
       </nuxt-link>
     </div>
@@ -63,32 +63,6 @@ const { t } = useI18n()
 <style scoped>
 ul li span {
   font-size: 0.875rem;
-}
-
-header {
-  background-color: rgb(var(--test));
-  height: 70px;
-  width: 100%;
-  padding-inline: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.nav-logo-wrapper {
-  display: flex;
-  flex: 1;
-  height: 100%;
-}
-
-.nav-logo {
-  display: flex;
-  font-size: 22px;
-  height: 100%;
-  font-weight: 700;
-  align-items: center;
 }
 
 .nav-check {

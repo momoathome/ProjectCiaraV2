@@ -1,22 +1,43 @@
 <script lang="ts" setup>
-const merlin = {
-  image: '/ships/scorpius.jpg',
-  title: 'Merlin',
-  description: 'Ein schneller, wendiger, leichter Jäger. Entwickelt für rasche Angriffe.',
-  unitLimit: 1,
-  combat: 100,
-  cost: 100_000,
-  cargo: 10,
-  buildTime: 5,
-}
+const { data: testData } = await useFetch('/api/testData')
 </script>
 
 <template>
-  <div class="p-4 md:ml-64">
-    <div class="border-dashed rounded-lg border-2 border-gray-200 mt-14 p-4 dark:border-gray-700">
-      <div class="h-600px grid gap-4">
-        <ContentCard :image="merlin.image" :title="merlin.title" :description="merlin.description" :cost="merlin.cost" :build-time="merlin.buildTime" :level="merlin.unitLimit" :combat="merlin.combat" :cargo="merlin.cargo" />
+  <main class="mt-55px px-4 md:ml-64">
+    <div class="py-8 px-4">
+      <div class="grid gap-8">
+        <ContentCard
+          v-for="(element, index) in testData!.modules"
+          :key="index"
+          :is-module="element.isModule"
+          :image="element.image"
+          :title="element.title"
+          :description="element.description"
+          :level="element.level"
+          :energy="element.energy"
+          :cost="element.cost"
+          :build-time="element.buildTime"
+        />
+        <ContentCard
+          v-for="(element, index) in testData!.spacecrafts"
+          :key="index"
+          :is-module="element.isModule"
+          :image="element.image"
+          :title="element.title"
+          :description="element.description"
+          :unit-limit="element.unitLimit"
+          :combat="element.combat"
+          :cost="element.cost"
+          :cargo="element.cargo"
+          :build-time="element.buildTime"
+        />
       </div>
     </div>
-  </div>
+  </main>
 </template>
+
+<style scoped>
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+</style>

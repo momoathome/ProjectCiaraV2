@@ -5,11 +5,11 @@ const { locale: currentLocale, t } = useI18n()
 
 <template>
   <aside
-    id="logo-sidebar"
-    class="border-r h-screen border-gray-200 pt-70px -translate-x-full transition-transform top-0 left-0 w-64 z-40 fixed md:translate-x-0 dark:border-gray-700"
+    id="sidemenu"
+    class="border-r-solid border-r-base/20 border-r-1 h-[calc(100%-55px)] -translate-x-full transition-transform top-55px left-0 w-64 z-40 fixed md:translate-x-0 dark:border-r-base_light/10"
     aria-label="Sidebar"
   >
-    <div class="h-full py-4 px-3 overflow-y-auto">
+    <div class="h-full py-4 overflow-y-auto">
       <nav class="font-medium">
         <nuxt-link to="/overview" class="nav-link">
           <img src="~/assets/images/navigation/space-station.png" width="32" alt="">
@@ -58,7 +58,7 @@ const { locale: currentLocale, t } = useI18n()
         </nuxt-link>
       </nav>
 
-      <div class="flex flex-row mt-16 gap-2">
+      <div class="flex flex-row mt-16 px-6 gap-2">
         <select
           id="languageListBox" v-model="currentLocale" role="listbox" tabindex="0" aria-labelledby="languageListBox"
           class="rounded-lg list py-1 px-2 transition dark:bg-base"
