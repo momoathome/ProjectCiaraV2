@@ -5,12 +5,12 @@ defineProps<{
   title: string
   description: string
   level?: number
-  unitLimit?: number
-  combat?: number
-  energy?: number
-  cost: number
-  cargo?: number
-  buildTime: number
+  unitLimit?: number | string
+  combat?: number | string
+  energy?: number | string
+  cost: number | string
+  cargo?: number | string
+  buildTime: string
 }>()
 
 const showDescription = ref(true)
@@ -84,6 +84,9 @@ const showDescription = ref(true)
 .content-card {
     background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
     background-blend-mode: multiply;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.content-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 24px 38px, rgba(0, 0, 0, 0.35) 0px 22px 15px, rgba(0, 0, 0, 0.3) 0px -12px 30px;
 }
 </style>

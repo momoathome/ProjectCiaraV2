@@ -14,8 +14,8 @@ const { data: testData } = await useFetch('/api/testData')
           :title="element.title"
           :description="element.description"
           :level="element.level"
-          :energy="element.energy"
-          :cost="element.cost"
+          :energy="numberFormat(element.energy)"
+          :cost="numberFormat(element.cost)"
           :build-time="element.buildTime"
         />
         <ContentCard
@@ -25,10 +25,10 @@ const { data: testData } = await useFetch('/api/testData')
           :image="element.image"
           :title="element.title"
           :description="element.description"
-          :unit-limit="element.unitLimit"
-          :combat="element.combat"
-          :cost="element.cost"
-          :cargo="element.cargo"
+          :unit-limit="numberFormat(element.unitLimit)"
+          :combat="numberFormat(element.combat)"
+          :cost="numberFormat(element.cost)"
+          :cargo="numberFormat(element.cargo)"
           :build-time="element.buildTime"
         />
       </div>
