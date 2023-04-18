@@ -4,7 +4,7 @@ defineProps<{
   image: string
   title: string
   description: string
-  level?: number
+  level?: number | string
   unitLimit?: number | string
   combat?: number | string
   energy?: number | string

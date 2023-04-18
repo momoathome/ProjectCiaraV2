@@ -10,7 +10,7 @@ export default defineEventHandler(() => {
         level: 1,
         energy: 1500,
         cost: 1000000,
-        buildTime: '900',
+        buildTime: 900,
       },
       {
         isModule: true,
@@ -20,7 +20,7 @@ export default defineEventHandler(() => {
         level: 1,
         energy: 500,
         cost: 900000,
-        buildTime: '720',
+        buildTime: 720,
       },
       {
         isModule: true,
@@ -30,7 +30,7 @@ export default defineEventHandler(() => {
         level: 1,
         energy: 600,
         cost: 1500000,
-        buildTime: '1800',
+        buildTime: 1800,
       },
       {
         isModule: true,
@@ -40,7 +40,7 @@ export default defineEventHandler(() => {
         level: 1,
         energy: 400,
         cost: 800000,
-        buildTime: '600',
+        buildTime: 600,
       },
       {
         isModule: true,
@@ -50,7 +50,7 @@ export default defineEventHandler(() => {
         level: 1,
         energy: 200,
         cost: 6000000,
-        buildTime: '300',
+        buildTime: 300,
       },
       {
         isModule: true,
@@ -60,7 +60,7 @@ export default defineEventHandler(() => {
         level: 1,
         energy: 900,
         cost: 1200000,
-        buildTime: '1500',
+        buildTime: 1500,
       },
     ],
     spacecrafts: [
@@ -73,7 +73,7 @@ export default defineEventHandler(() => {
         combat: 100,
         cargo: 10,
         cost: 1000000,
-        buildTime: '5',
+        buildTime: 5,
       },
       {
         isModule: false,
@@ -84,7 +84,7 @@ export default defineEventHandler(() => {
         combat: 100,
         cargo: 10,
         cost: 1000000,
-        buildTime: '5',
+        buildTime: 15,
       },
       {
         isModule: false,
@@ -95,7 +95,7 @@ export default defineEventHandler(() => {
         combat: 100,
         cargo: 10,
         cost: 1000000,
-        buildTime: '5',
+        buildTime: 30,
       },
       {
         isModule: false,
@@ -106,7 +106,7 @@ export default defineEventHandler(() => {
         combat: 100,
         cargo: 10,
         cost: 1000000,
-        buildTime: '5',
+        buildTime: 60,
       },
     ],
   }

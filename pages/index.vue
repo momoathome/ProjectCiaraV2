@@ -16,7 +16,7 @@ const { data: testData } = await useFetch('/api/testData')
           :level="element.level"
           :energy="numberFormat(element.energy)"
           :cost="numberFormat(element.cost)"
-          :build-time="element.buildTime"
+          :build-time="timeFormat(element.buildTime)"
         />
         <ContentCard
           v-for="(element, index) in testData!.spacecrafts"
@@ -29,7 +29,7 @@ const { data: testData } = await useFetch('/api/testData')
           :combat="numberFormat(element.combat)"
           :cost="numberFormat(element.cost)"
           :cargo="numberFormat(element.cargo)"
-          :build-time="element.buildTime"
+          :build-time="timeFormat(element.buildTime)"
         />
       </div>
     </div>
