@@ -7,29 +7,29 @@ const { data: testData } = await useFetch('/api/testData')
     <div class="py-8 px-4">
       <div class="grid gap-8">
         <ContentCard
-          v-for="(element, index) in testData!.modules"
+          v-for="(data, index) in testData!.modules"
           :key="index"
-          :is-module="element.isModule"
-          :image="element.image"
-          :title="element.title"
-          :description="element.description"
-          :level="element.level"
-          :energy="numberFormat(element.energy)"
-          :cost="numberFormat(element.cost)"
-          :build-time="timeFormat(element.buildTime)"
+          :is-module="data.isModule"
+          :image="data.image"
+          :title="data.title"
+          :description="data.description"
+          :level="data.level"
+          :energy="numberFormat(data.energy)"
+          :cost="numberFormat(data.cost)"
+          :build-time="timeFormat(data.buildTime)"
         />
         <ContentCard
-          v-for="(element, index) in testData!.spacecrafts"
+          v-for="(data, index) in testData!.spacecrafts"
           :key="index"
-          :is-module="element.isModule"
-          :image="element.image"
-          :title="element.title"
-          :description="element.description"
-          :unit-limit="numberFormat(element.unitLimit)"
-          :combat="numberFormat(element.combat)"
-          :cost="numberFormat(element.cost)"
-          :cargo="numberFormat(element.cargo)"
-          :build-time="timeFormat(element.buildTime)"
+          :is-module="data.isModule"
+          :image="data.image"
+          :title="data.title"
+          :description="data.description"
+          :unit-limit="numberFormat(data.unitLimit)"
+          :combat="numberFormat(data.combat)"
+          :cost="numberFormat(data.cost)"
+          :cargo="numberFormat(data.cargo)"
+          :build-time="timeFormat(data.buildTime)"
         />
       </div>
     </div>

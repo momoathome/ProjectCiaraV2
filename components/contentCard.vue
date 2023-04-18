@@ -38,32 +38,33 @@ const showDescription = ref(true)
         </p>
       </div>
     </div>
-
-    <div class="flex flex-col py-6 px-8 gap-8">
-      <p v-show="showDescription" class="font-normal">
+    <div class="flex flex-col px-8 gap-10" :class="[showDescription ? 'py-6' : 'pt-12 pb-6']">
+      <p v-show="showDescription" class="font-normal mb-2">
         {{ description }}
       </p>
 
-      <div class="grid px-4 gap-y-6 gap-x-4 grid-cols-2">
-        <div v-if="isModule" class="flex gap-3 items-center">
-          <img src="~/assets/images/energy-light.svg" width="32" class="" alt="">
-          <p> {{ energy }} </p>
-        </div>
-        <div v-else class="flex gap-3 items-center">
-          <img src="~/assets/images/combatValue-light.svg" width="32" class="" alt="">
-          <p> {{ combat }} </p>
-        </div>
-        <div class="flex gap-3 items-center">
-          <img src="~/assets/images/credits-light.svg" width="32" class="" alt="">
-          <p> {{ cost }} </p>
-        </div>
-        <div v-if="!isModule" class="flex gap-3 items-center">
-          <img src="~/assets/images/cargo.svg" width="32" class="" alt="">
-          <p> {{ cargo }} </p>
-        </div>
-        <div class="flex gap-3 items-center">
-          <img src="~/assets/images/hourglass.svg" width="32" class="" alt="">
-          <p> {{ buildTime }} </p>
+      <div class="relative" :class="{ spaceCraftStatPseudoClass: !isModule }">
+        <div :class="[{ moduleCostPseudoClass: isModule }, { spaceCraftCostPseudoClass: !isModule }]" class="grid px-4 gap-y-6 gap-x-4 grid-cols-2 relative">
+          <div v-if="isModule" class="flex gap-3 items-center">
+            <img src="~/assets/images/energy-light.svg" width="32" class="" alt="">
+            <p> {{ energy }} </p>
+          </div>
+          <div v-else class="flex gap-3 items-center">
+            <img src="~/assets/images/combatValue-light.svg" width="32" class="" alt="">
+            <p> {{ combat }} </p>
+          </div>
+          <div class="flex gap-3 items-center">
+            <img src="~/assets/images/credits-light.svg" width="32" class="" alt="">
+            <p> {{ cost }} </p>
+          </div>
+          <div v-if="!isModule" class="flex gap-3 items-center">
+            <img src="~/assets/images/cargo.svg" width="32" class="" alt="">
+            <p> {{ cargo }} </p>
+          </div>
+          <div class="flex gap-3 items-center">
+            <img src="~/assets/images/hourglass.svg" width="32" class="" alt="">
+            <p> {{ buildTime }} </p>
+          </div>
         </div>
       </div>
 
@@ -88,5 +89,65 @@ const showDescription = ref(true)
 }
 .content-card:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 24px 38px, rgba(0, 0, 0, 0.35) 0px 22px 15px, rgba(0, 0, 0, 0.3) 0px -12px 30px;
+}
+
+.moduleCostPseudoClass::before {
+  content: 'cost';
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
+  color: #c5c5c5;
+  font-size: 11px;
+}
+
+.moduleCostPseudoClass::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  left: 47px;
+  height: 0;
+  width: 160px;
+  border-top: 1px solid #c5c5c550;
+  box-sizing: content-box;
+  display: block;
+}
+
+.spaceCraftStatPseudoClass::before {
+  content: 'stats';
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
+  color: #c5c5c5;
+  font-size: 11px;
+}
+.spaceCraftStatPseudoClass::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  left: 47px;
+  height: 0;
+  width: 50px;
+  border-top: 1px solid #c5c5c550;
+  box-sizing: content-box;
+  display: block;
+}
+.spaceCraftCostPseudoClass::before {
+  content: 'cost';
+  position: absolute;
+  top: -1.5rem;
+  left: 150px;
+  color: #c5c5c5;
+  font-size: 11px;
+}
+.spaceCraftCostPseudoClass::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  left: calc(150px + 27px);
+  height: 0;
+  width: 50px;
+  border-top: 1px solid #c5c5c550;
+  box-sizing: content-box;
+  display: block;
 }
 </style>

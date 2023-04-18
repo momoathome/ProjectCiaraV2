@@ -1,8 +1,16 @@
 export function timeFormat(numberInSeconds: number) {
-  const minutes = Math.floor(numberInSeconds / 60)
   const seconds = numberInSeconds % 60
+  let minutes = Math.floor(numberInSeconds / 60)
+  const hours = Math.floor(minutes / 60)
 
-  return `${timeFormatToDoubleDigit(minutes)}:${timeFormatToDoubleDigit(seconds)}`
+  let formattedTime = `${timeFormatToDoubleDigit(minutes)}:${timeFormatToDoubleDigit(seconds)}`
+
+  if (hours >= 1) {
+    minutes = minutes % 60
+    formattedTime = `${timeFormatToDoubleDigit(hours)}:${timeFormatToDoubleDigit(minutes)}:${timeFormatToDoubleDigit(seconds)}`
+  }
+
+  return formattedTime
 }
 
 // if timeNumber is a single digit like 10:0
