@@ -7,12 +7,15 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   position: 'bottom',
 })
+
+const tippStore = useTippStore()
+const { tipps } = storeToRefs(tippStore)
 </script>
 
 <template>
   <div class="flex relative group">
     <slot />
-    <div class="rounded-xl flex flex-col bg-#101318 text-xs w-max opacity-0 py-2 px-3 transition z-10 transition-duration-1000 absolute invisible group-hover:opacity-100 group-hover:visible" :class="position">
+    <div v-if="tipps" class="rounded-xl flex flex-col bg-#101318 text-xs w-max opacity-0 py-2 px-3 transition z-10 transition-duration-1000 absolute invisible group-hover:opacity-100 group-hover:visible" :class="position">
       <span class="mb-2">Beschreibung:</span>
       <span>{{ title }}</span>
     </div>

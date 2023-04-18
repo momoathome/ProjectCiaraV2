@@ -17,8 +17,11 @@ defineProps<{
 const { count } = storeToRefs(store)
 const { increment, reset, decrement, double } = store */
 
+const tippStore = useTippStore()
+const { tipps } = storeToRefs(tippStore)
+const { toggle } = tippStore
+
 const count = ref(0)
-const showDescription = ref(true)
 
 function increment() {
   count.value++
@@ -43,7 +46,7 @@ function handleFocusOut(e: any) {
   <div class="rounded-xl shadow text-white max-w-340px transition-all transition-duration-500 content-card">
     <img class="rounded-t-xl object-cover h-230px" :src="image" alt="">
     <div class="bg-gradient-to-r flex from-#485563 to-#29323C h-11 relative justify-center items-center">
-      <img src="~/assets/images/InfoOutline.svg" width="24" height="24" class="cursor-pointer top-23% left-4 absolute" alt="Info Button" @click="showDescription = !showDescription">
+      <img src="~/assets/images/InfoOutline.svg" width="24" height="24" class="cursor-pointer top-23% left-4 absolute" alt="Info Button" @click="toggle">
 
       <p class="font-medium text-xl tracking-wide">
         {{ title }}
@@ -63,8 +66,8 @@ function handleFocusOut(e: any) {
         </Tooltip>
       </div>
     </div>
-    <div class="flex flex-col px-8 gap-10" :class="[showDescription ? 'py-6' : 'pt-12 pb-6']">
-      <p v-show="showDescription" class="font-normal mb-2">
+    <div class="flex flex-col px-8 gap-10" :class="[tipps ? 'py-6' : 'pt-12 pb-6']">
+      <p v-show="tipps" class="font-normal mb-2">
         {{ description }}
       </p>
 
