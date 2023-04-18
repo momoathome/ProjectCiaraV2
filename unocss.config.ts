@@ -15,7 +15,7 @@ export default defineConfig({
   shortcuts: [
     [
       'btn',
-      'px-22 py-2 font-medium text-xl tracking-wide text-white transition transform rounded-xl border-none no-underline shadow-md bg-gradient-to-r from-#98DBF9 via-#436DAB to-#101318',
+      'px-22 py-2 font-medium text-xl tracking-wide text-white rounded-xl border-none no-underline shadow-md',
     ],
     [
       'icon-btn',

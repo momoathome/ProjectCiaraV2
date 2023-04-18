@@ -40,7 +40,7 @@ function handleFocusOut(e: any) {
 </script>
 
 <template>
-  <div class="rounded-xl shadow text-white max-w-340px transition-all content-card">
+  <div class="rounded-xl shadow text-white max-w-340px transition-all transition-duration-500 content-card">
     <img class="rounded-t-xl object-cover h-230px" :src="image" alt="">
     <div class="bg-gradient-to-r flex from-#485563 to-#29323C h-11 relative justify-center items-center">
       <img src="~/assets/images/InfoOutline.svg" width="24" height="24" class="cursor-pointer top-23% left-4 absolute" alt="Info Button" @click="showDescription = !showDescription">
@@ -49,16 +49,18 @@ function handleFocusOut(e: any) {
         {{ title }}
       </p>
 
-      <div class="flex text-lg top-2 right-4 absolute">
-        <span v-if="isModule">Lv.</span>
-        <img v-else src="~/assets/images/spaceship-light.svg" width="22" class="me-1" alt="">
+      <div v-if="isModule" class="flex text-lg top-2 right-4 absolute">
+        <Tooltip title="Gebäude Stufe" position="left">
+          <span>Lv.</span>
+          <p>{{ level }}</p>
+        </Tooltip>
+      </div>
 
-        <p v-if="isModule">
-          {{ level }}
-        </p>
-        <p v-else>
-          {{ unitLimit }}
-        </p>
+      <div v-else class="flex text-lg top-2 right-4 absolute">
+        <Tooltip title="Einheiten Limit" position="left">
+          <img src="~/assets/images/spaceship-light.svg" width="22" class="me-1" alt="">
+          <p>{{ unitLimit }}</p>
+        </Tooltip>
       </div>
     </div>
     <div class="flex flex-col px-8 gap-10" :class="[showDescription ? 'py-6' : 'pt-12 pb-6']">
@@ -69,23 +71,34 @@ function handleFocusOut(e: any) {
       <div class="relative" :class="{ spaceCraftStatPseudoClass: !isModule }">
         <div :class="[{ moduleCostPseudoClass: isModule }, { spaceCraftCostPseudoClass: !isModule }]" class="grid px-4 gap-y-6 gap-x-4 grid-cols-2 relative">
           <div v-if="isModule" class="flex gap-3 items-center">
-            <img src="~/assets/images/energy-light.svg" width="32" class="" alt="">
+            <Tooltip title="Energieverbrauch">
+              <img src="~/assets/images/energy-light.svg" width="32" class="" alt="">
+            </Tooltip>
             <p> {{ energy }} </p>
           </div>
           <div v-else class="flex gap-3 items-center">
-            <img src="~/assets/images/combatValue-light.svg" width="32" class="" alt="">
+            <Tooltip title="Kampfkraft">
+              <img src="~/assets/images/combatValue-light.svg" width="32" class="" alt="">
+            </Tooltip>
             <p> {{ combat }} </p>
           </div>
+
           <div class="flex gap-3 items-center">
-            <img src="~/assets/images/credits-light.svg" width="32" class="" alt="">
+            <Tooltip title="Credits">
+              <img src="~/assets/images/credits-light.svg" width="32" class="" alt="">
+            </Tooltip>
             <p> {{ cost }} </p>
           </div>
           <div v-if="!isModule" class="flex gap-3 items-center">
-            <img src="~/assets/images/cargo.svg" width="32" class="" alt="">
+            <Tooltip title="Kapazität">
+              <img src="~/assets/images/cargo.svg" width="32" class="" alt="">
+            </Tooltip>
             <p> {{ cargo }} </p>
           </div>
           <div class="flex gap-3 items-center">
-            <img src="~/assets/images/hourglass.svg" width="32" class="" alt="">
+            <Tooltip title="Bauzeit">
+              <img src="~/assets/images/hourglass.svg" width="32" class="" alt="">
+            </Tooltip>
             <p> {{ buildTime }} </p>
           </div>
         </div>
@@ -106,7 +119,9 @@ function handleFocusOut(e: any) {
             </svg>
           </button>
 
-          <input v-if="!isModule" v-model="count" type="text" min="0" inputmode="numeric" pattern="[0-9]*" maxlength="4" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="border-solid outline-none bg-#353535 border-#424242 h-8 text-white text-center w-16" @focus="handleFocus" @blur="handleFocusOut">
+          <Tooltip v-if="!isModule" title="Gebe ein wie viele Einheiten du produzieren möchtest">
+            <input v-if="!isModule" v-model="count" type="text" min="0" inputmode="numeric" pattern="[0-9]*" maxlength="4" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="border-solid outline-none bg-#353535 border-#424242 h-8 text-white text-center w-16" @focus="handleFocus" @blur="handleFocusOut">
+          </Tooltip>
 
           <button v-if="!isModule" @click="increment">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 320 512">
@@ -128,6 +143,15 @@ function handleFocusOut(e: any) {
 .content-card:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 24px 38px, rgba(0, 0, 0, 0.35) 0px 22px 15px, rgba(0, 0, 0, 0.3) 0px -12px 30px;
 }
+
+.btn {
+  transition: 0.5s;
+  background: linear-gradient(90deg, var(--c1), var(--c2) 25%, var(--c3) 50%, var(--c2) 75%, var(--c1)) var(--x, 0)/ 200%;
+  --c1: #98DBF9;
+  --c2: #436DAB;
+  --c3: #101318;
+}
+.btn:hover { --x: 100%; }
 
 .moduleCostPseudoClass::before {
   content: 'cost';
