@@ -13,7 +13,30 @@ defineProps<{
   buildTime: string
 }>()
 
+/* const store = useCounterStore()
+const { count } = storeToRefs(store)
+const { increment, reset, decrement, double } = store */
+
+const count = ref(0)
 const showDescription = ref(true)
+
+function increment() {
+  count.value++
+}
+
+function decrement() {
+  if (count.value === 0)
+    return
+
+  count.value--
+}
+
+function handleFocus(e: any) {
+  e.target.value = ''
+}
+function handleFocusOut(e: any) {
+  e.target.value = count.value
+}
 </script>
 
 <template>
@@ -75,7 +98,22 @@ const showDescription = ref(true)
         <button v-else id="shipBtn" class="btn" role="button" type="button">
           Produce
         </button>
-        <input v-if="!isModule" type="text" min="0" value="0" inputmode="numeric" pattern="[0-9]*" maxlength="4" onfocus="this.value=''" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="border-solid outline-none bg-#353535 border-#424242 h-8 text-white text-center w-16">
+
+        <div class="flex items-center">
+          <button v-if="!isModule" @click="decrement">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 320 512">
+              <path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+          </button>
+
+          <input v-if="!isModule" v-model="count" type="text" min="0" inputmode="numeric" pattern="[0-9]*" maxlength="4" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" class="border-solid outline-none bg-#353535 border-#424242 h-8 text-white text-center w-16" @focus="handleFocus" @blur="handleFocusOut">
+
+          <button v-if="!isModule" @click="increment">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 320 512">
+              <path fill="currentColor" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256L73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
