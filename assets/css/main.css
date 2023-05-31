@@ -3,6 +3,13 @@
   --base-light: 238, 238, 238; 
   --primary: 0, 173, 181;
   --secondary: 57, 62, 70;
+
+  --button-shadow-color: 0deg 0% 0%;
+  --button-shadow-elevation-medium:
+  1px 1px 1.6px hsl(var(--button-shadow-color) / 0.13),
+  3.5px 3.5px 5.6px -0.8px hsl(var(--button-shadow-color) / 0.13),
+  8.8px 8.8px 14px -1.7px hsl(var(--button-shadow-color) / 0.13),
+  21.5px 21.5px 34.2px -2.5px hsl(var(--button-shadow-color) / 0.13);
 }
 
 .dark {

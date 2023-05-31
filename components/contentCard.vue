@@ -17,9 +17,9 @@ defineProps<{
 const { count } = storeToRefs(store)
 const { increment, reset, decrement, double } = store */
 
-const tippStore = useTippStore()
-const { tipps } = storeToRefs(tippStore)
-const { toggle } = tippStore
+const hintStore = useHintStore()
+const { hint } = storeToRefs(hintStore)
+const { toggle } = hintStore
 
 const count = ref(0)
 
@@ -43,7 +43,7 @@ function handleFocusOut(e: any) {
 </script>
 
 <template>
-  <div class="rounded-xl shadow text-white max-w-340px transition-all transition-duration-500 content-card">
+  <div class="rounded-xl text-white max-w-340px transition-all transition-duration-500 content-card">
     <img class="rounded-t-xl object-cover h-230px" :src="image" alt="">
     <div class="bg-gradient-to-r flex from-#485563 to-#29323C h-11 relative justify-center items-center">
       <img src="~/assets/images/InfoOutline.svg" width="24" height="24" class="cursor-pointer top-23% left-4 absolute" alt="Info Button" @click="toggle">
@@ -66,8 +66,8 @@ function handleFocusOut(e: any) {
         </Tooltip>
       </div>
     </div>
-    <div class="flex flex-col px-8 gap-10" :class="[tipps ? 'py-6' : 'pt-12 pb-6']">
-      <p v-show="tipps" class="font-normal mb-2">
+    <div class="flex flex-col px-8 gap-10" :class="[hint ? 'py-6' : 'pt-12 pb-6']">
+      <p v-show="hint" class="font-normal mb-2">
         {{ description }}
       </p>
 
@@ -139,15 +139,22 @@ function handleFocusOut(e: any) {
 
 <style scoped>
 .content-card {
+  --shadow-color: 0deg 0% 57%;
+
     background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
     background-blend-mode: multiply;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow:     1px 1px 1.6px hsl(var(--shadow-color) / 0.42),
+    3.5px 3.5px 5.6px -0.8px hsl(var(--shadow-color) / 0.42),
+    8.8px 8.8px 14px -1.7px hsl(var(--shadow-color) / 0.42),
+    21.5px 21.5px 34.2px -2.5px hsl(var(--shadow-color) / 0.42);
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px, rgba(0, 0, 0, 0.2) 0px -12px 30px; */
 }
-.content-card:hover {
+/* .content-card:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 24px 38px, rgba(0, 0, 0, 0.35) 0px 22px 15px, rgba(0, 0, 0, 0.3) 0px -12px 30px;
-}
+} */
 
 .btn {
+  box-shadow: var(--button-shadow-elevation-medium);
   transition: 0.5s;
   background: linear-gradient(90deg, var(--c1), var(--c2) 25%, var(--c3) 50%, var(--c2) 75%, var(--c1)) var(--x, 0)/ 200%;
   --c1: #98DBF9;
@@ -161,7 +168,7 @@ function handleFocusOut(e: any) {
   position: absolute;
   top: -1.5rem;
   left: 1rem;
-  color: #c5c5c5;
+  color: #c4c4c4;
   font-size: 11px;
 }
 
